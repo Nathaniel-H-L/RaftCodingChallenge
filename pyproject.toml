@@ -1,0 +1,28 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raft-langgraph-agent"
+version = "0.1.0"
+description = "LangGraph-based AI agent for unstructured order data"
+authors = [
+    { name="Nathaniel Luscomb" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "langgraph>=0.0.40",
+    "langchain>=0.1.16",
+    "langchain-openai>=0.1.6",
+    "requests>=2.31.0",
+    "pydantic>=2.6.0",
+    "python-dotenv>=1.0.1"
+]
+
+[project.scripts]
+# CLI entry point
+raft-agent = "raft_agent.main:main"
+
