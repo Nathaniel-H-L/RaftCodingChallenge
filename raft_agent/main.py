@@ -128,7 +128,7 @@ def fetch_orders(state: AgentState):
     logger.info("Fetching orders from API")
 
     try:
-        r = requests.get("http://localhost:5001/api/orders", timeout=5)
+        r = requests.get(os.getenv("API_URL"), timeout=5)
         r.raise_for_status()
         return {"raw_orders": r.text}
     except Exception as e:
@@ -284,3 +284,4 @@ def main():
 # -------------------------------------------------
 if __name__ == "__main__":
     main()
+
